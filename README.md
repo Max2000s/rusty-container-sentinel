@@ -1,4 +1,8 @@
-# 🐳 Rusty Container Sentinel
+# Rusty Container Sentinel
+
+<p align="center">
+  <img src="static/logo.png" width="200" alt="Rusty Container Sentinel Logo">
+</p>
 
 Rusty Container Sentinel is a lightweight, efficient monitoring tool built in Rust, designed to provide real-time visibility into Docker container logs, statuses, and metrics.
 
