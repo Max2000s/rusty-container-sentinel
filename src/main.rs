@@ -5,6 +5,8 @@ use tracing_subscriber::EnvFilter;
 mod docker;
 mod routes;
 
+const HOST: &str = "0.0.0.0:8080";
+
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
@@ -20,9 +22,7 @@ async fn main() {
         .layer(CorsLayer::permissive())
         .fallback_service(ServeDir::new("static"));
 
-    let host = "0.0.0.0:8080";
-
-    tracing::info!("Starting backen service on {}.", host);
-    let listener = tokio::net::TcpListener::bind(host).await.unwrap();
+    tracing::info!("Starting sentinel backend listener on {} ...", HOST);
+    let listener = tokio::net::TcpListener::bind(HOST).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
