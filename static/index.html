@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rusty Container Sentinel</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white font-sans p-8">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl font-bold mb-4">Rusty Container Sentinel</h1>
+
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg mb-8">
+        <h2 class="text-xl font-semibold mb-2">Docker Version</h2>
+        <div class="text-gray-300">
+          Version: <span id="docker-version">loading...</span><br>
+          API Version: <span id="api-version">loading...</span>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Docker Containers</h2>
+        <div id="container-list" class="space-y-4">Loading containers...</div>
+        <div id="logs-section" class="mt-8 bg-gray-800 rounded-lg p-4 shadow-lg hidden">
+          <h2 class="text-xl font-semibold mb-4">Container Logs: <span id="selected-container"></span></h2>
+          <pre id="container-logs" class="bg-black rounded p-3 h-64 overflow-auto text-green-400 text-sm"></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

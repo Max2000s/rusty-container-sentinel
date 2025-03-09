@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rusty-container-sentinel:
+    build: .
+    environment:
+      - RUST_LOG=info
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "8080:8080"
